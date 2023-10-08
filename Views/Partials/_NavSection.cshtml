@@ -1,0 +1,73 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{ 
+    var site = Model.Root();
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
+}
+
+
+<header>
+    <div class="container">
+        <div class="logo"><img src="~/images/Logos/Logo.svg" alt="Crito"></div>
+        <nav id="menu" class="menu-links">
+            <a class="link" href="/">HOME</a>
+            <a class="link" href="/news">NEWS</a>
+            <a class="link" href="/contact">CONTACT</a>
+        </nav>
+
+        <div class="header-content-xl">
+            <div class="contact-info">
+                <div class="address-info">
+                    <div class="info-box">
+                        <i class="fa-regular fa-phone-volume"></i>
+                        +46 (8) 121 470 50
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-regular fa-envelope"></i>
+                        info@crito.com
+                    </div>
+                    <div class="info-box last">
+                        <i class="fa-regular fa-location-dot"></i>
+                        Sveavägen 31, 111 34 Stockholm
+                    </div>
+                </div>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <nav>
+                    <a class="@(Model.Id == site.Id ? "active": null)" href="/">@site.Name</a>
+                    
+                    
+                    @if (selection?.Length > 0)
+                    {
+                        @foreach (var item in selection)
+                        {
+                            <a class="@(item.IsAncestorOrSelf(Model) ? "active": null)" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                            
+                        }
+                    }
+                </nav>
+                <a href="/login" class="button btn-theme">Login <i class="fa-regular fa-arrow-up-right"></i></a>
+
+            </div>
+        </div>
+
+        <div class="toggle">
+            <button class="btn-toggle btn-outline-white" data-option="toggle" data-target="#menu">
+                <i id="icon" class="fa-regular fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,52 @@
+.subscribe-now {
+    background-color: $color-theme-2;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        .subscribe {
+            display: flex;
+
+            p {
+                color: $color-dark-1;
+                font-size: 36px;
+                font-weight: $font-weight-bold;
+            }
+
+            #subscribeForm {
+                display: flex;
+                border-radius: 25px;
+                height: 45px;
+                padding-left: 300px;
+
+                input {
+                    border-radius: 25px;
+                    outline: none;
+                    border: 1px solid $color-dark-4;
+                    font-size: 0.9rem;
+                    padding-left: 1.3rem;
+                }
+
+                button {
+                    height: 100%;
+                    padding: 0 1rem;
+                    margin-left: 2rem;
+                    background-color: $color-theme-1;
+                    color: $color-white;
+                    border: none;
+                    border-radius: 25px;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: $color-dark-2;
+                    }
+                }
+            }
+        }
+    }
+}

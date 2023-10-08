@@ -1,0 +1,47 @@
+footer {
+    background-color: $color-dark-blue;
+    color: white;
+    padding: 60px 0 20px 0;
+
+    .container {
+
+
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+
+            .logo {
+
+                .description {
+                    margin-top: 20px;
+                    width: 300px;
+                }
+            }
+
+            .links {
+                margin-top: 30px;
+
+                a {
+                    display: flex;
+                    color: white;
+
+                    &:hover {
+                        color: $color-theme-3;
+                    }
+                }
+            }
+
+            .title {
+                font-weight: $font-weight-bold;
+                margin-bottom: 20px;
+            }
+        }
+
+        .bottom-border {
+            border-top: 1px solid rgb(116, 116, 116);
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.projects {
+
+    .container {
+
+        .project-title {
+
+            .category {
+                color: $color-theme-4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .title {
+                font-size: 36px;
+                font-weight: $font-weight-bold;
+                color: $color-dark-1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .case-card {
+                margin-top: 50px;
+                margin-left: 20px;
+
+                img {
+                    width: 100%;
+                }
+
+                .card-title {
+                    margin-top: 20px;
+                    color: $color-dark-1;
+                    font-weight: $font-weight-bold;
+                    border-bottom: 1px solid #dddbcf;
+                }
+
+                .card-button {
+                    margin-top: 20px;
+                    border: none;
+                    display: flex;
+                    align-items: right;
+                    justify-content: right;
+                }
+            }
+        }
+
+        .project-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+    }
+}

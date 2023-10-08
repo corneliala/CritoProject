@@ -1,0 +1,62 @@
+.our-team {
+    background-color: $color-theme-1;
+    padding: 120px 0;
+    margin-top: 70px;
+
+    .container {
+
+        .team-title {
+            margin-bottom: 50px;
+
+            .category {
+                color: $color-theme-4;
+            }
+
+            .title-divide {
+                display: flex;
+                justify-content: space-between;
+
+                .title {
+                    color: $color-dark-1;
+                    font-size: 36px;
+                    font-weight: $font-weight-bold;
+                }
+
+                button {
+                    border: 1px solid black;
+                    color: black;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-evenly;
+
+            .member {
+
+                .name-title {
+                    margin-top: 10px;
+                    font-size: 20px;
+                    font-weight: $font-weight-bold;
+                    color: $color-dark-1;
+                }
+
+                .position {
+                    color: $color-dark-1;
+                }
+            }
+        }
+
+        .slider {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

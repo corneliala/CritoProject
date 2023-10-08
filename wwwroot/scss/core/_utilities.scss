@@ -1,0 +1,92 @@
+html, body {
+    font-size: 16px;
+    color: $color-dark-3;
+    font-family: $font-inter;
+}
+
+.wrapper {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: $color-theme-1;
+
+    &:hover {
+        text-decoration: underline;
+        color: $color-theme-1;
+    }
+}
+
+button {
+    padding: 8px 30px;
+    border: 1px solid $color-dark-1;
+    border-radius: 25px;
+    background-color: transparent;
+    color: $color-dark-1;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: $color-dark-1;
+        color: $color-white;
+    }
+}
+
+.button {
+    padding: 8px 30px;
+    border: 1px solid $color-dark-1;
+    border-radius: 25px;
+    background-color: transparent;
+    color: $color-dark-1;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: $color-dark-1;
+        color: $color-white;
+    }
+}
+
+.btn-dark {
+    background-color: $color-dark-1;
+    color: $color-white;
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-dark-1;
+    }
+}
+
+
+.btn-white {
+    background-color: $color-white;
+    color: $color-dark-1;
+}
+
+.btn-toggle {
+    padding: 5px 12px;
+    font-size: 1.2rem;
+    border: none;
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-dark-1;
+    }
+}
+
+.btn-theme {
+    border: none;
+    background-color: $color-theme-1;
+    color: $color-white;
+}
+
+.open-menu {
+    width: 100% !important;
+    opacity: 0.99;
+    transform: translateX(-100%);
+}
+
+.invalid {
+    border: 1px solid $color-theme-1 !important;
+}

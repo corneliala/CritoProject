@@ -1,0 +1,71 @@
+.features {
+    .container {
+        margin-bottom: 120px;
+        display: grid;
+        grid-template-areas:
+            "accounting options";
+        grid-template-columns: 1fr 1fr;
+
+
+        .accounting {
+            margin-right: 130px;
+            grid-area: accounting;
+            padding: 20px 50px;
+
+            .category {
+                color: $color-theme-4;
+            }
+
+            .feature-title {
+                color: $color-dark-1;
+                font-size: 36px;
+                font-weight: $font-weight-bold;
+            }
+
+            button {
+                margin-top: 50px;
+                width: 100%;
+            }
+        }
+
+        .consult-options {
+            margin-top: 50px;
+            margin-left: 80px;
+            display: grid;
+            grid-area: options;
+            grid-template-areas:
+                "handshake lightbulb" "finance management";
+            grid-template-columns: 1fr 1fr;
+
+
+            .handshake {
+                margin-right: 50px;
+                margin-bottom: 60px;
+                grid-area: handshake;
+            }
+
+            .lightbulb {
+                margin-bottom: 60px;
+                grid-area: lightbulb;
+            }
+
+            .finance {
+                grid-area: finance;
+            }
+
+            .management {
+                grid-area: management;
+            }
+
+            .advise-title {
+                color: $color-dark-1;
+                font-weight: $font-weight-bold;
+                font-size: 20px;
+            }
+
+            .description {
+                color: $color-dark-1;
+            }
+        }
+    }
+}

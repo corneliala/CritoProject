@@ -1,0 +1,17 @@
+.brand-logos {
+
+    .container {
+        margin-top: 70px;
+        margin-bottom: 100px;
+
+        .associated-brands {
+            display: none;
+
+            @include lg {
+                justify-content: space-between;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+}

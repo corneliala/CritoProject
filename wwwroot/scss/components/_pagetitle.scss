@@ -1,0 +1,25 @@
+.page-title {
+    background-color: $color-theme-2;
+    height: 300px;
+    padding-top: 190px;
+    padding-bottom: 90px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .content {
+            .category {
+                color: $color-dark-1;
+            }
+
+            .title {
+                color: $color-dark-1;
+                font-size: 56px;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+}

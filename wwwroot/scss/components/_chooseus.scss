@@ -1,0 +1,60 @@
+.choose-us {
+    .container {
+        display: flex;
+        padding: 120px 0;
+
+        .text-side {
+            .category {
+                color: $color-theme-4;
+            }
+
+            .main-title {
+                color: $color-dark-1;
+                font-size: 40px;
+                font-weight: $font-weight-bold;
+                padding: 0 290px 0 0;
+            }
+
+            .reasons {
+
+                .reason {
+                    display: flex;
+                    margin-top: 60px;
+
+                    .text-part {
+                        margin-left: 20px;
+
+                        .title {
+                            color: $color-dark-1;
+                            font-size: 20px;
+                            font-weight: $font-weight-bold;
+                        }
+
+                        .description {
+                            margin-top: 7px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .consult-img {
+            position: relative;
+
+            img {
+                display: block;
+                z-index: 1;
+            }
+
+            .background-box {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 800px;
+                height: 425px;
+                background-color: $color-theme-2;
+                z-index: -1;
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    display: flex;
+    padding: 0 20px;
+    background-color: $color-theme-2;
+
+
+
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo toggle";
+
+        .header-content-xl {
+            display: none;
+            flex: 1;
+
+
+            @include lg {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact-info {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #dddbcf;
+                padding-top: 30px;
+                padding-bottom: 10px;
+                font-size: 14px;
+
+
+
+                .address-info {
+                    display: flex;
+
+                    .info-box {
+                        padding-right: 30px;
+                        margin-right: 20px;
+                        border-right: 1px solid #dddbcf;
+
+                        i {
+                            margin-right: 5px;
+                            font-size: 16px;
+                        }
+
+                        &.last {
+                            border: none;
+                        }
+                    }
+                }
+
+                .social-media {
+                    font-size: 18px;
+
+                    a {
+                        color: $color-dark-1;
+                        margin-right: 10px;
+
+                        &:hover {
+                            color: $color-dark-4;
+                        }
+                    }
+                }
+            }
+
+            .main-menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 20px;
+
+
+                nav {
+
+                    a {
+                        display: inline-block;
+                        color: $color-dark-1;
+                        margin-right: 36px;
+                        text-decoration: none;
+                        position: relative;
+
+                        &.active {
+                            font-weight: $font-weight-medium;
+                        }
+
+                        &.active::after,
+                        &:hover::after {
+                            content: '';
+                            position: absolute;
+                            height: 2px;
+                            width: 15px;
+                            background-color: $color-dark-1;
+                            left: 50%;
+                            bottom: -3px;
+                            transform: translate((calc(50% - 15px)));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .logo {
+        grid-area: logo;
+        display: flex;
+        align-items: center;
+        font-size: 27px;
+
+        img {
+            margin-right: 5px;
+
+            @include lg {
+                padding-right: 50px;
+            }
+        }
+    }
+
+    .menu-links {
+        grid-area: menulinks;
+        background-color: $color-theme-2;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 0vw;
+        padding-top: 80px;
+        transform: translateX(0%);
+        transition: all 0.25s;
+        font-size: 20px;
+        overflow: hidden;
+
+
+        @include lg {
+            display: none;
+        }
+
+        .link {
+            color: $color-dark-blue;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $color-white;
+            }
+        }
+    }
+
+    .toggle {
+        grid-area: toggle;
+        position: relative;
+        display: block;
+        text-align: right;
+        z-index: 1;
+
+        @include lg {
+            display: none;
+        }
+
+        .btn-toggle {
+            padding: 5px 12px;
+            font-size: 1.2rem;
+        }
+    }
+}
