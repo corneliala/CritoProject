@@ -1,6 +1,98 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleListPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.PublishedContent;
 @{
 	Layout = "LayoutWithBreadcrumb.cshtml";
+	
+	var itemsPerPage = 9;
+	var pageNumber = 1;
+	
+	if(!int.TryParse(Context.Request.Query["page"], out pageNumber))
+	    pageNumber = 1;
+	    
+	    
+	
+	var selection = Umbraco?.Content(Guid.Parse("7c032214-5c7c-4f44-871f-fafff6d100a3"))?
+            .ChildrenOfType("articleItemPage")?
+            .Where(x => x.IsVisible())
+            .OrderByDescending(x => x.CreateDate).ToList();
+            
+    var totalItems = selection?.Count() ?? 0;
+    var pagedItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
+    
+    
 }
+
+
+<section class="news">
+        <div class="container">
+            <div class="article-title">
+                <div class="title-divide">
+                    <div class="title">Our News & Article</div>
+                </div>
+            </div>
+            <div class="news-articles">
+                <div class="row">
+
+    @if (pagedItems != null) {
+        var counter = 0; // Initialize a counter  
+
+        @foreach (var item in pagedItems!) {
+            var url = item.Url();
+            var date = item.CreateDate;
+            var image = item.Value<IPublishedContent>("newsImage");
+            var category = item.Value("newsCategory");
+            var title = item.Name();
+            var description = item.Value("newsPreamble");
+
+            // Start a new row for every third item
+            @if (counter % 3 == 0) {
+                
+                @:</div> <!-- Close the previous row -->
+                @:<div class="row"> <!-- Start a new row -->
+            }
+            
+
+            <a href="@url" class="col article">
+                <div class="article-date">
+                    <div class="day">@date.ToString("dd")</div>
+                    <div class="month">@date.ToString("MMM")</div>
+                </div>
+                <img src="@image?.Url()" alt="">
+                <div class="news-category">@category</div>
+                <div class="news-title">@title</div>
+                <div class="description">@description</div>
+            </a>
+
+            counter++; // Increment the counter
+        }
+    }
+</div>
+            </div>
+            <div class="slider">
+                
+                @if (pageNumber > 1) 
+                {
+                    <a href="?page=@(pageNumber - 1)" class="button item-link link-prev" aria-label="Previous">
+                        <span aria-hidden="true"><i class="fa-sharp fa-solid fa-chevron-left"></i></span>
+                    </a>
+                }
+
+                @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
+                {
+                if (i == pageNumber) { <a href="#" class="button item-link active-button">@i</a>}
+                else { <a href="?page=@i" class="button item-link">@i</a> }
+                }
+
+                
+                @if (pageNumber < Math.Ceiling((decimal)totalItems / itemsPerPage))
+                {
+                    <a href="?page=@(pageNumber + 1)" class="button item-link link-next" aria-label="Next">
+                        <span aria-hidden="true"><i class="fa-sharp fa-solid fa-chevron-right"></i></span>
+                    </a>
+                }
+  
+            </div>
+        </div>
+    </section>

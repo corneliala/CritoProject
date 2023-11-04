@@ -14,7 +14,7 @@ html, body {
 
 a {
   text-decoration: none;
-  color: #F0D082;
+  color: #000000;
 }
 a:hover {
   text-decoration: underline;
@@ -324,54 +324,76 @@ header .toggle .btn-toggle {
   display: grid;
   grid-template-areas: "accounting options";
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px; /* Added grid-gap for spacing */
 }
+
 .features .container .accounting {
-  margin-right: 130px;
   grid-area: accounting;
-  padding: 20px 50px;
+  padding: 20px;
 }
+
 .features .container .accounting .category {
   color: #F94D1C;
 }
+
 .features .container .accounting .feature-title {
   color: #000000;
   font-size: 36px;
   font-weight: 700;
 }
-.features .container .accounting button {
+
+.features .container .accounting .btn-theme {
   margin-top: 50px;
   width: 100%;
 }
+
 .features .container .consult-options {
-  margin-top: 50px;
-  margin-left: 80px;
-  display: grid;
   grid-area: options;
-  grid-template-areas: "handshake lightbulb" "finance management";
+  display: grid;
+  grid-template-areas:
+    "handshake lightbulb"
+    "finance management";
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px; /* Added grid-gap for spacing */
 }
-.features .container .consult-options .handshake {
-  margin-right: 50px;
-  margin-bottom: 60px;
-  grid-area: handshake;
+
+.features .container .umb-block-list {
+  background-color: #f9f9f9; /* Background color for feature boxes */
+  padding: 20px;
+  border-radius: 10px;
 }
-.features .container .consult-options .lightbulb {
-  margin-bottom: 60px;
-  grid-area: lightbulb;
+
+.features .container .umb-block-list i {
+  font-size: 36px;
+  color: #F94D1C;
+  margin-bottom: 10px;
 }
-.features .container .consult-options .finance {
-  grid-area: finance;
-}
-.features .container .consult-options .management {
-  grid-area: management;
-}
-.features .container .consult-options .advise-title {
+
+.features .container .umb-block-list .advise-title {
   color: #000000;
   font-weight: 700;
   font-size: 20px;
 }
-.features .container .consult-options .description {
+
+.features .container .umb-block-list .description {
   color: #000000;
+}
+
+/* Updated the selectors for individual feature boxes */
+.features .container .umb-block-list:nth-child(1) {
+  grid-area: handshake;
+}
+
+.features .container .umb-block-list:nth-child(2) {
+  grid-area: lightbulb;
+}
+
+.features .container .umb-block-list:nth-child(3) {
+  grid-area: finance;
+}
+
+.features .container .umb-block-list:nth-child(4) {
+  grid-area: management;
 }
 
 .about {
@@ -650,34 +672,81 @@ header .toggle .btn-toggle {
 }
 
 .news {
-  padding: 120px 0;
+    padding: 120px 0;
 }
-.news .container .article-title {
-  margin-bottom: 50px;
+
+
+.col.article .article-date {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+    background-color: #F0D082;
+    color: white;
+    padding: 5px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
+
+.col.article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.col.article img {
+    width: 100%;
+}
+
+.col.article .news-category {
+    margin-top: 10px;
+}
+
+.col.article .news-title {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    width: 100%;
+}
+
+.col.article .description {
+    margin-top: 10px;
+    color: #000000;
+    width: 100%;
+}
+
 .news .container .article-title .category {
-  color: #F94D1C;
+    color: #F94D1C;
 }
+
 .news .container .article-title .title-divide {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
+
 .news .container .article-title .title-divide .title {
-  color: #000000;
-  font-size: 36px;
-  font-weight: 700;
+    color: #000000;
+    font-size: 36px;
+    font-weight: 700;
 }
+
 .news .container .article-title .title-divide button {
-  border: 1px solid black;
-  color: black;
+    border: 1px solid black;
+    color: black;
 }
+
 .news .container .article-title .title-divide button:hover {
-  color: white;
+    color: white;
 }
+
 .news .container .news-articles {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
+
 .news .container .news-articles .article {
   margin-bottom: 30px;
   margin-left: 30px;
@@ -697,11 +766,45 @@ header .toggle .btn-toggle {
   color: #000000;
   width: 400px;
 }
-.news .container .slider {
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+
+.slider {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-link {
+    padding: 10px;
+    margin: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #00000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.item-link:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.link-prev {
+    margin-right: 10px;
+}
+
+.link-next {
+    margin-left: 10px;
+}
+
+.active-button {
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 .subscribe-now {

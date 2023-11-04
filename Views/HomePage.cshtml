@@ -6,3 +6,16 @@
 }
 
 @await Html.PartialAsync("_BrandSection")
+
+ <section class="features">
+        <div class="container">
+            <div class="accounting">
+                <div class="category">@Model.Value("serviceCategoryTitle")</div>
+                <div class="feature-title">@Model.Value("serviceHeadTitle")</div>
+                <a class="button btn-theme" href="@Model.Value("serviceButtonUrl")">@Model.Value("serviceButtonText") <i class="fa-regular fa-arrow-up-right"></i></a>
+            </div>
+            <div class="consult-options">
+                @Html.GetBlockListHtml(Model.ServiceFeatures)
+            </div>  
+        </div>
+</section>
