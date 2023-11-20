@@ -4,29 +4,26 @@
 
 @inject IPublishedUrlProvider PublishedUrlProvider
 
-@{ var selection = Model.Ancestors().ToArray(); }
+@{
+    var selection = Model.Ancestors().ToArray();
+}
 
 @if (selection?.Length > 0)
 {
-
-
-<section class="page-title">
+    <section class="page-title">
         <div class="container">
             <div class="content">
-                @foreach (var item in selection.OrderBy(x => x.Level))
-                {
-                
                 <div class="category">
-                    <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                    @foreach (var item in selection.OrderBy(x => x.Level))
+                    {
+                        <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                    }
                     <span>@Model.Name</span>
                 </div>
-                }
-                <div class="title">@Model.Value("pageTitle")</div>
                 
+                <div class="title">@Model.Value("pageTitle")</div>
+
             </div>
         </div>
-</section>
-
-
-    
+    </section>
 }

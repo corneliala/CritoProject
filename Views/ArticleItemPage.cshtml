@@ -1,6 +1,48 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleItemPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Services;
+@inject IUserService UserService;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+
 @{
 	Layout = "LayoutWithBreadcrumb.cshtml";
+    var userService = UserService;
+    var image = Model.Value<IPublishedContent>("newsImage");
 }
+
+
+    <section class="articleitem-section">
+        <div class="container">
+            <div class="head-content">
+                <div class="head-title">@Model.Name</div>
+                <div class="head-details">
+                    <span>@Model.CreateDate.ToString("MMM dd, yyyy")</span>
+                    <i class="fa-solid fa-circle"></i>
+                    <span>@Model.Value("newsCategory")</span>
+                    <i class="fa-solid fa-circle"></i>
+                    <span>@Model.CreatorName(UserService)</span>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-content">
+                    <img src="@image.Url()" alt="">
+                    <div class="article-text">@Model.Value("newsContent")</div>
+                    <div class="tags">
+                        @foreach(var tag in Model.Value<IEnumerable<string>>("newsTags")) 
+                        {
+                            <span>@tag</span>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <aside>
+                <div class="searchbox">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Type to search...">
+                </div>
+            </aside>
+
+        </div>
+    </section>

@@ -324,7 +324,7 @@ header .toggle .btn-toggle {
   display: grid;
   grid-template-areas: "accounting options";
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px; /* Added grid-gap for spacing */
+  grid-gap: 20px;
 }
 
 .features .container .accounting {
@@ -354,18 +354,17 @@ header .toggle .btn-toggle {
     "handshake lightbulb"
     "finance management";
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px; /* Added grid-gap for spacing */
+  grid-gap: 20px;
 }
 
 .features .container .umb-block-list {
-  background-color: #f9f9f9; /* Background color for feature boxes */
   padding: 20px;
   border-radius: 10px;
 }
 
 .features .container .umb-block-list i {
   font-size: 36px;
-  color: #F94D1C;
+  color: #000000;
   margin-bottom: 10px;
 }
 
@@ -379,7 +378,7 @@ header .toggle .btn-toggle {
   color: #000000;
 }
 
-/* Updated the selectors for individual feature boxes */
+
 .features .container .umb-block-list:nth-child(1) {
   grid-area: handshake;
 }
@@ -899,6 +898,11 @@ footer .container .bottom-border {
 }
 .page-title .container .content .category {
   color: #000000;
+  
+}
+.page-title .container .content .category span {
+  color: #000000;
+  font-weight: 700;
 }
 
 .page-title .container .content .title {
@@ -907,4 +911,173 @@ footer .container .bottom-border {
   font-weight: 700;
 }
 
-        
+.articleitem-section {
+  padding: 20px;
+}
+
+.articleitem-section .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.head-content {
+  flex-basis: 100%;
+  text-align: left;
+}
+
+.head-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #000;
+}
+
+.head-details {
+  font-size: 10px;
+  margin-bottom: 20px;
+  color: #F0D082;
+}
+
+.head-details span {
+  font-size: 16px;
+  margin: 0 5px;
+  color: #000;
+}
+
+.article {
+  flex-basis: calc(70% - 20px);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-content img {
+  width: 100%;
+  height: auto;
+}
+
+.article-text {
+  margin-top: 15px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.tags span {
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.searchbox {
+  display: flex;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.searchbox input[type="text"] {
+  border: none;
+  width: 100%;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  outline: none;
+}
+
+.searchbox i {
+  padding: 10px;
+}
+
+.card-section {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.card-section .container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-section .container .contact-card {
+  display: flex;
+  width: 350px;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.274);
+  padding-left: 20px;
+  padding: 40px 40px 40px 0;
+  border: 1px gray;
+  text-align: center;
+}
+
+.card-section .container .contact-card .icon {
+  margin-right: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-section .container .contact-card .info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.card-section .container .contact-card .info p {
+  font-size: 12px;
+  margin: 5px 0;
+  color: #666;
+}
+
+.contact-section .container {
+  background-color: #f0efe9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section .container .contact-form {
+  text-align: center;
+  margin: 50px auto;
+  padding: 100px 200px;
+}
+
+.contact-section .container .contact-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+}
+
+.contact-section .container .contact-form .form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.contact-section .container .contact-form .contact-btn {
+  width: 500px;
+}
+
+.google-maps iframe {
+    height: 450px;
+    width:100%;
+}

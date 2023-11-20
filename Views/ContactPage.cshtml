@@ -1,0 +1,60 @@
+﻿@using Crito.Models;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "LayoutWithBreadcrumb.cshtml";
+    var contactForm = new ContactForm();
+}
+
+    <section class="card-section">
+        <div class="container">
+            <div class="contact-card">
+              <div class="icon"><i class="fa-sharp fa-regular fa-location-dot"></i></div>
+              <div class="info">
+                <h3>Visit us</h3>
+                <p>Sveavägen 31<br>111 34 STOCKHOLM</p>
+              </div>
+              
+            </div>
+            <div class="contact-card">
+              <div class="icon"><i class="fa-regular fa-phone-volume"></i></div>
+              <div class="info">
+                <h3>Call us</h3>
+                <p>+46 (8) 121 470 50<br>+46 (8) 121 470 51</p>
+              </div>
+              
+            </div>
+            <div class="contact-card">
+              <div class="icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="info">
+                <h3>Email us</h3>
+                <p>info@crito.com<br>support@crito.com</p>
+              </div>
+            </div>
+          </div>
+    </section>
+    
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-form">
+                <h2>Leave us a message<br> for any information.</h2>
+                @using (Html.BeginUmbracoForm("Index", "Contact", FormMethod.Post))
+                {
+                    <div asp-validation-summary="All"></div>
+                  
+                    <input asp-for="@contactForm.Name" type="text" class="form-control" placeholder="Name" required>
+                    <input asp-for="@contactForm.Email" type="email" class="form-control" placeholder="Email" required>
+                    <textarea asp-for="@contactForm.Message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                  
+                    <button type="submit" class="contact-btn btn-theme">Send Message</button>
+                    
+                }
+            </div>
+        </div>
+    </section>
+    
+    <section class="google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16278.969291354913!2d18.044694143210666!3d59.335104817892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1sen!2sse!4v1699483740963!5m2!1sen!2sse" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
